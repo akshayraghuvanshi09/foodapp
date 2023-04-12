@@ -10,6 +10,7 @@
 	<groupId>com.foodapp.iteam</groupId>
 	<artifactId>com.foodapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>com.foodapp</name>
 	<description>Demo project for full service</description>
 	<properties>
