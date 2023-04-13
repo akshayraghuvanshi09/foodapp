@@ -1,0 +1,10 @@
+com\foodapp\iteam\controller\ItemServiceController.class
+com\foodapp\iteam\exceptions\ItemException.class
+com\foodapp\iteam\serviceimpl\IteamServiceImpl.class
+com\foodapp\iteam\model\Item$ItemBuilder.class
+com\foodapp\iteam\service\ItemService.class
+com\foodapp\iteam\Application.class
+com\foodapp\iteam\dto\ItemResponseDto.class
+com\foodapp\iteam\repository\IteamRepository.class
+com\foodapp\iteam\dto\ItemRequestDto.class
+com\foodapp\iteam\model\Item.class
