@@ -17,6 +17,7 @@
 		<java.version>11</java.version>
 	</properties>
 		<profiles>
+		
     <profile>
        <id>sonar</id>
        <activation>
@@ -33,6 +34,7 @@
         <sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
        </properties>
     </profile>
+    
 </profiles>
 
 	<dependencies>
@@ -80,10 +82,16 @@
     <artifactId>sonar-maven-plugin</artifactId>
     <version>3.9.1.2184</version>
 </dependency>
+<dependency>
+    <groupId>org.jacoco</groupId> 
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.7</version>
+</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+		
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -96,6 +104,30 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			 <plugin>
+      <groupId>org.jacoco</groupId>
+     <artifactId>jacoco-maven-plugin</artifactId>
+      <version>0.8.7</version>
+      <executions>
+        <execution>
+          <id>prepare-agent</id>
+          <goals>
+            <goal>prepare-agent</goal>
+          </goals>
+        </execution>
+        <execution>
+          <id>report</id>
+          <goals>
+            <goal>report</goal>
+          </goals>
+          <configuration>
+            <formats>
+              <format>XML</format>
+            </formats>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
 		</plugins>
 		<finalName>devops-integration</finalName>
 	</build>
