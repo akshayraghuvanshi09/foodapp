@@ -17,24 +17,24 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 @AutoConfigureMockMvc
-public class IteamServiceControllerTest {
+class IteamServiceControllerTest {
 	
-//	@Autowired
-//	private MockMvc mockMvc;
-//	
-//	@Test
-//	public void testGetAllItem() throws Exception {
-//		//1.creating the request
-//		MockHttpServletRequestBuilder mockHttpServletRequestBuilder = MockMvcRequestBuilders.get("/item/viewall");
-//		//2.Execute Request
-//		MvcResult result = mockMvc.perform(mockHttpServletRequestBuilder).andReturn();
-//		//3.Get the response or result
-//		MockHttpServletResponse response = result.getResponse();
-//
-//		//4.Assert result
-//		assertEquals(HttpStatus.OK.value(), response.getStatus());
-//		assertNotNull(response.getContentAsString());
-//	}
-//	
+	@Autowired
+	private MockMvc mockMvc;
+	
+	@Test
+	void testGetAllItem() throws Exception {
+		//1.creating the request
+		MockHttpServletRequestBuilder mockHttpServletRequestBuilder = MockMvcRequestBuilders.get("/item/viewall");
+		//2.Execute Request
+		MvcResult result = mockMvc.perform(mockHttpServletRequestBuilder).andReturn();
+		//3.Get the response or result
+		MockHttpServletResponse response = result.getResponse();
+
+		//4.Assert result
+		assertEquals(HttpStatus.OK.value(), response.getStatus());
+		assertNotNull(response.getContentAsString());
+	}
+	
 	
 }

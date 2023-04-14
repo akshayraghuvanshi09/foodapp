@@ -27,23 +27,18 @@ public class IteamServiceImpl implements ItemService {
 	@Override
 	public ItemResponseDto addItem(ItemRequestDto item) throws ItemException {
 
-		System.out.println("before map");
 		Item it = mapper.map(item, Item.class);
-		System.out.println("after maap");
 		Item save = repository.save(it);
-		ItemResponseDto itemResponseDto = mapper.map(save, ItemResponseDto.class);
-		return itemResponseDto;
+		return mapper.map(save, ItemResponseDto.class);
 	}
 
 	@Override
-	public ItemResponseDto updateItem(ItemRequestDto item,Integer itemId) throws ItemException {
-		
+	public ItemResponseDto updateItem(ItemRequestDto item, Integer itemId) throws ItemException {
+
 		Optional<Item> byId = repository.findById(itemId);
 		if (!byId.isEmpty()) {
 			Item it = mapper.map(byId.get(), Item.class);
-			ItemResponseDto dto= mapper.map(it, ItemResponseDto.class);
-			System.out.println(dto);
-			return dto;
+			return mapper.map(it, ItemResponseDto.class);
 		} else {
 			throw new ItemException("No such item found...");
 		}
@@ -77,10 +72,9 @@ public class IteamServiceImpl implements ItemService {
 	@Override
 	public List<ItemResponseDto> viewAllItems() throws ItemException {
 		List<Item> items = repository.findAll();
-		if (items.size() > 0) {
-			List<ItemResponseDto> list = items.stream().map(e->mapper.map(e, ItemResponseDto.class)).collect(Collectors.toList());
-			
-			return list;
+		if (!items.isEmpty()) {
+			return items.stream().map(e -> mapper.map(e, ItemResponseDto.class))
+					.collect(Collectors.toList());
 		} else {
 			throw new ItemException("No item exists.. ");
 		}
