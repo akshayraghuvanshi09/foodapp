@@ -1,7 +1,6 @@
 package com.foodapp.iteam.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.foodapp.iteam.dto.ItemRequestDto;
 import com.foodapp.iteam.dto.ItemResponseDto;

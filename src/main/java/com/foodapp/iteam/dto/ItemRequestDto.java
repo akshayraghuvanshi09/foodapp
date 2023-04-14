@@ -1,7 +1,5 @@
 package com.foodapp.iteam.dto;
 
-import com.foodapp.iteam.model.Item;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
