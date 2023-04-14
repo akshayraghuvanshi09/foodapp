@@ -16,6 +16,25 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+		<profiles>
+    <profile>
+       <id>sonar</id>
+       <activation>
+          <activeByDefault>true</activeByDefault>
+       </activation>
+       <properties>
+          <!-- Optional URL to server. Default value is http://localhost:9000 -->
+          <sonar.host.url>
+             http://localhost:9099
+          </sonar.host.url>
+          <sonar.login>admin</sonar.login>
+          <sonar.password>12345</sonar.password>
+        <!---<sonar.analysis.mode>incremental</sonar.analysis.mode>-->
+        <sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
+       </properties>
+    </profile>
+</profiles>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -56,6 +75,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+		<dependency>
+    <groupId>org.sonarsource.scanner.maven</groupId>
+    <artifactId>sonar-maven-plugin</artifactId>
+    <version>3.9.1.2184</version>
+</dependency>
 	</dependencies>
 
 	<build>
