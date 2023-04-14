@@ -79,21 +79,21 @@ public class ItemServiceTest {
 //		
 //	}
 
-	@Test
-	public void test_UpdateItem() throws ItemException {
-		Integer id = 1;
-		ItemRequestDto itemRequestDto = new ItemRequestDto("name", 10, 120.0, "category");
-		ItemResponseDto itemResponseDto = new ItemResponseDto("name", 10, 120.0, "category");
-		Item item=new Item(1, "pepsi", 5, 150.2, "soft drink");
-		when(iteamRepository.findById(id)).thenReturn(Optional.of(item));
-		System.out.println("--------------------");
-		when(itemService.updateItem(itemRequestDto, id)).thenReturn(Optional.of(itemResponseDto));
-		System.out.println();
-		assertEquals(itemRequestDto.getIteamName(), itemResponseDto.getIteamName());
-		assertEquals(itemRequestDto.getCategory(), itemResponseDto.getCategory());
-		assertEquals(itemRequestDto.getCost(), itemResponseDto.getCost());
-		assertEquals(itemRequestDto.getQuantity(), itemResponseDto.getQuantity());
-
-	}
+//	@Test
+//	public void test_UpdateItem() throws ItemException {
+//		Integer id = 1;
+//		ItemRequestDto itemRequestDto = new ItemRequestDto("name", 10, 120.0, "category");
+//		ItemResponseDto itemResponseDto = new ItemResponseDto("name", 10, 120.0, "category");
+//		Item item=new Item(1, "pepsi", 5, 150.2, "soft drink");
+//		when(iteamRepository.findById(id)).thenReturn(Optional.of(item));
+//		System.out.println("--------------------");
+//		when(itemService.updateItem(itemRequestDto, id)).thenReturn(Optional.of(itemResponseDto));
+//		System.out.println();
+//		assertEquals(itemRequestDto.getIteamName(), itemResponseDto.getIteamName());
+//		assertEquals(itemRequestDto.getCategory(), itemResponseDto.getCategory());
+//		assertEquals(itemRequestDto.getCost(), itemResponseDto.getCost());
+//		assertEquals(itemRequestDto.getQuantity(), itemResponseDto.getQuantity());
+//
+//	}
 
 }

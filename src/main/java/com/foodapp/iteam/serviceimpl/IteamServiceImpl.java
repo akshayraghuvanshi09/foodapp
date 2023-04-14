@@ -36,14 +36,14 @@ public class IteamServiceImpl implements ItemService {
 	}
 
 	@Override
-	public Optional<ItemResponseDto> updateItem(ItemRequestDto item,Integer itemId) throws ItemException {
+	public ItemResponseDto updateItem(ItemRequestDto item,Integer itemId) throws ItemException {
 		
 		Optional<Item> byId = repository.findById(itemId);
 		if (!byId.isEmpty()) {
 			Item it = mapper.map(byId.get(), Item.class);
 			ItemResponseDto dto= mapper.map(it, ItemResponseDto.class);
 			System.out.println(dto);
-			return Optional.of(dto);
+			return dto;
 		} else {
 			throw new ItemException("No such item found...");
 		}

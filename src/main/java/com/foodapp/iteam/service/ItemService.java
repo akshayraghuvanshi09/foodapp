@@ -12,7 +12,7 @@ public interface ItemService {
 
 	public ItemResponseDto addItem(ItemRequestDto item)throws ItemException;
 	
-	public Optional<ItemResponseDto>  updateItem(ItemRequestDto item,Integer itemId)throws ItemException;
+	public ItemResponseDto  updateItem(ItemRequestDto item,Integer itemId)throws ItemException;
 	
 	public Item viewItem(Integer itemId)throws ItemException;
 	

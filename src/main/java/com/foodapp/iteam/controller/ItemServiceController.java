@@ -40,7 +40,7 @@ public class ItemServiceController {
 	
 	@PutMapping("/update/{itemID}")
 	public ResponseEntity<ItemResponseDto> updateItem(@RequestBody ItemRequestDto item,@PathVariable("itemID") Integer itemId){
-		ItemResponseDto updateItem = itemService.updateItem(item,itemId).get();
+		ItemResponseDto updateItem = itemService.updateItem(item,itemId);
 		return new ResponseEntity<ItemResponseDto>(updateItem,HttpStatus.OK);
 	}
 	
