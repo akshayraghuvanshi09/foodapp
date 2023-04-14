@@ -20,7 +20,7 @@ import com.foodapp.iteam.repository.IteamRepository;
 import com.foodapp.iteam.service.ItemService;
 
 @SpringBootTest
-public class ItemServiceTest {
+class ItemServiceTest {
 
 	@Autowired
 	private ItemService itemService;
@@ -33,7 +33,7 @@ public class ItemServiceTest {
 //	private Item item;
 
 	@Test
-	public void test_ViewAllItem() throws ItemException {
+	void test_ViewAllItem() throws ItemException {
 		List<Item> dtos = new ArrayList<>();
 		dtos.add(new Item(1, "name", 10, 120.0, "category"));
 		dtos.add(new Item(2, "name1", 19, 125.0, "categoryC"));
@@ -46,7 +46,7 @@ public class ItemServiceTest {
 	}
 
 	@Test
-	public void test_SaveCustomer() throws ItemException {
+	void test_SaveCustomer() throws ItemException {
 		System.out.println(itemService);
 		ItemRequestDto itemRequestDto = new ItemRequestDto("name", 10, 120.0, "category");
 		Item item = mapper.map(itemRequestDto, Item.class);
