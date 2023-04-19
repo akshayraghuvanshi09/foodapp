@@ -32,8 +32,6 @@ public class ItemServiceController {
 	
 	@PostMapping("/add")
 	public ResponseEntity<ItemResponseDto> addItem(@RequestBody ItemRequestDto item){
-		
-	
 		ItemResponseDto newItem = itemService.addItem(item);
 		return new ResponseEntity<ItemResponseDto>(newItem,HttpStatus.CREATED);
 	}
