@@ -60,6 +60,7 @@ public class ItemServiceController {
 	@GetMapping("/viewall")
 	public ResponseEntity<List<ItemResponseDto>> getAllItem(){
 		List<ItemResponseDto> viewAllItems = itemService.viewAllItems();
+		
 		return new ResponseEntity<List<ItemResponseDto>>(viewAllItems,HttpStatus.OK);
 	}
 	
