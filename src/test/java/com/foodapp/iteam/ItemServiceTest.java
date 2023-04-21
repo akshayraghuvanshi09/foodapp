@@ -32,32 +32,32 @@ class ItemServiceTest {
 
 //	private Item item;
 
-//	@Test
-//	void test_ViewAllItem() throws ItemException {
-//		List<Item> dtos = new ArrayList<>();
-//		dtos.add(new Item(1, "name", 10, 120.0, "category"));
-//		dtos.add(new Item(2, "name1", 19, 125.0, "categoryC"));
-//
-//		// List<ItemResponseDto> list =
-//		// dtos.stream().map(e->mapper.map(e,ItemResponseDto.class)).collect(Collectors.toList());
-//		when(iteamRepository.findAll()).thenReturn(dtos);
-//		assertEquals(2, dtos.size());
-//
-//	}
+	@Test
+	void test_ViewAllItem() throws ItemException {
+		List<Item> dtos = new ArrayList<>();
+		dtos.add(new Item(1, "name", 10, 120.0, "category"));
+		dtos.add(new Item(2, "name1", 19, 125.0, "categoryC"));
 
-//	@Test
-//	void test_SaveCustomer() throws ItemException {
-//		System.out.println(itemService);
-//		ItemRequestDto itemRequestDto = new ItemRequestDto("name", 10, 120.0, "category");
-//		Item item = mapper.map(itemRequestDto, Item.class);
-//		ItemResponseDto itemResponseDto = mapper.map(item, ItemResponseDto.class);
-//		when(iteamRepository.save(item)).thenReturn(item);
-//		// assertEquals(item,itemService.addItem(itemRequestDto));
-//		assertEquals(itemRequestDto.getIteamName(), itemResponseDto.getIteamName());
-//		assertEquals(itemRequestDto.getQuantity(), itemResponseDto.getQuantity());
-//		assertEquals(itemRequestDto.getCost(), itemResponseDto.getCost());
-//		assertEquals(itemRequestDto.getCategory(), itemResponseDto.getCategory());
-//	}
+		// List<ItemResponseDto> list =
+		// dtos.stream().map(e->mapper.map(e,ItemResponseDto.class)).collect(Collectors.toList());
+		when(iteamRepository.findAll()).thenReturn(dtos);
+		assertEquals(2, dtos.size());
+
+	}
+
+	@Test
+	void test_SaveCustomer() throws ItemException {
+		System.out.println(itemService);
+		ItemRequestDto itemRequestDto = new ItemRequestDto("name", 10, 120.0, "category");
+		Item item = mapper.map(itemRequestDto, Item.class);
+		ItemResponseDto itemResponseDto = mapper.map(item, ItemResponseDto.class);
+		when(iteamRepository.save(item)).thenReturn(item);
+		// assertEquals(item,itemService.addItem(itemRequestDto));
+		assertEquals(itemRequestDto.getIteamName(), itemResponseDto.getIteamName());
+		assertEquals(itemRequestDto.getQuantity(), itemResponseDto.getQuantity());
+		assertEquals(itemRequestDto.getCost(), itemResponseDto.getCost());
+		assertEquals(itemRequestDto.getCategory(), itemResponseDto.getCategory());
+	}
 
 //	@Test
 //	public void Test_RemoveItem() throws ItemException{
