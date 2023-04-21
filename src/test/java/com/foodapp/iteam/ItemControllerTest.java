@@ -64,23 +64,23 @@ public class ItemControllerTest {
 //		
 //	}
 //	
-//	@Test
-//	public void saveIteam() {
-//		ItemRequestDto dto =new ItemRequestDto("Dosha",1,70.0,"Sounth Food");
-//		ItemResponseDto responseDto = mapper.map(dto, ItemResponseDto.class);
-//		when(itemService.addItem(dto)).thenReturn(responseDto);
-//		try {
-//			mockMvc.perform(post("/item/add")
-//					.contentType(MediaType.APPLICATION_JSON)
-//					.content(new ObjectMapper().writeValueAsString(dto)))
-//					.andExpect(status().isOk());
-//		} catch (JsonProcessingException e) {
-//			e.printStackTrace();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		
-//	}
-//	
+	@Test
+	public void saveIteam() {
+		ItemRequestDto dto =new ItemRequestDto("Dosha",1,70.0,"Sounth Food");
+		ItemResponseDto responseDto = mapper.map(dto, ItemResponseDto.class);
+		when(itemService.addItem(dto)).thenReturn(responseDto);
+		try {
+			mockMvc.perform(post("/item/add")
+					.contentType(MediaType.APPLICATION_JSON)
+					.content(new ObjectMapper().writeValueAsString(dto)))
+					.andExpect(status().isOk());
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	
 }
